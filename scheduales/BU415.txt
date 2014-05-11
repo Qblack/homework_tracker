@@ -1,0 +1,25 @@
+May 5 |Course Overview|Introduction to MIS |Ch. 1
+May 7 |What is an information system?|Piccoli, G. Information Systems Defined (course pack)
+May 12 |Strategy and Technology |Ch. 2
+May 14 |Zara: Fast Fashion from Savvy Systems |Ch. 3 - Zara Memo Due
+May 19 |No Monday classes due to Victoria Day civic holiday
+May 21 |Netflix |Ch. 4 - Netflix Memo Due
+May 26 |Moore’s Law |Ch. 5
+May 28 |Understanding Network Effects |Ch. 7
+June 2 |Peer Production, Social Media, and Web 2.0; Facebook |Ch. 8 & 9 - Facebook memo Due
+June 4 |Test 1
+June 9 |Software Development |Lego Building Exercise
+June 11 |Case |Cisco: Implementing ERP (course pack) - Cisco Memo Due
+June 16 |Case |Pearson SuccessMaker (course pack) - Pearson Memo Due
+June 18 |Case |Fixing the Payment System at Alvade (course pack) - Alvade memo Due
+June 23 |Understanding Software |Ch. 10
+June 25 |Software in Flux |Ch. 11
+June 30 |Case |Business Intelligence @ Canadian Tire (course package) - Canadian Tire memo Due
+July 2 |Data Asset |Ch. 12
+July 7 |Information Security |Ch. 14
+July 9 |Google |Ch. 15 - Google memo due
+July 14 |Test 2
+July 16 |Technology Impact Assessment Presentations
+July 21 |Technology Impact Assessment Presentations
+July 23 |Technology Impact Assessment Presentations
+July 28 |Special Topics in IS - Make up class for Victoria Day Monday

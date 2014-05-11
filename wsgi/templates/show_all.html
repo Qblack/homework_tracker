@@ -1,0 +1,110 @@
+{% extends "index.html" %}
+{% block body %}
+        <div class="row">
+            <div class="col-md-12">
+
+                <form role="form" method="post" id="homework_form" action="/">
+
+                 <div class="row">
+                    <div class="col-md-8 col-md-offset">
+
+                        <button type="button" class="btn btn-info"
+                                onclick="filterReadings()">Toggle Readings</button>
+                        <button type="button" class="btn btn-danger"
+                                onclick="filterTests()">Toggle Tests</button>
+                        <button type="button" class="btn btn-success"
+                                onclick="filterAssignments()">Toggle Assignments</button>
+
+                        <button type="button" class="btn btn-warning" onclick="unhideRows()">Show All</button>
+                        <button type="button" class="btn btn-default" onclick="hideRows()">Hide Completed</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  id="search">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                  </div>
+
+                    <table class="table .table-bordered table-condensed" id="homework">
+                     <thead>
+                      <tr>
+                          <th>Course Code</th>
+                          <th>Title</th>
+                          <th>Date</th>
+                          <th>Time</th>
+                          <th>Toggle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for entry in entries|sort(attribute='date')  %}
+                    <tr class="{{ entry.type }}" id="{{ entry.id }}">
+                        <td>{{ entry.course_code }}</td>
+                        <td>{{ entry.name }}</td>
+                        <td>{{ entry.date|datetimeformat }}</td>
+                        <td >{{ entry.time }}</td>
+                        <td>
+                            <div class="checkbox">
+                              <input type="checkbox" name="{{ entry.id }}" value="{{ entry.complete }}">
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                 </table>
+              </form>
+        </div>
+    </div>
+</div>
+
+<script>
+$("#homework_form input[type=checkbox]").each(function () {
+        if ($(this).val()==1){
+            $("#"+$(this).attr('name')).toggleClass( "line-through" );
+            $("#"+$(this).attr('name')).hide();
+        }
+    });
+
+function unhideRows(){
+    $("#homework_form tr").each(function () {
+       $(this).show();
+    })};
+
+function hideRows(){
+    $("#homework_form input[type=checkbox]").each(function () {
+        if ($(this).val()==1){
+            $("#"+$(this).attr('name')).hide();
+        }
+    });
+};
+
+function filterReadings(){
+    $('.Readings').each(function() {
+        $(this).toggle();
+    });
+};
+
+function filterAssignments(){
+    $('.Assignments').each(function() {
+        $(this).toggle();
+    });
+};
+
+function filterTests(){
+    $('.Tests').each(function() {
+        $(this).toggle();
+    });
+};
+
+
+
+</script>
+
+
+{% endblock %}
+
+

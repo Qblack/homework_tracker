@@ -1,0 +1,42 @@
+{% extends "individual_reading.html" %}
+{% block body %}
+
+
+        <div class="row" >
+            <div class="col-md-12">
+                 <table class="table" id="homework">
+                     <thead>
+                      <tr>
+                          <th>Course Code</th>
+                          <th>Title</th>
+                          <th>Date</th>
+                          <th>Time</th>
+                          <th>Complete</th>
+                      </tr>
+                      </thead>
+                    <tbody>
+                    {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry.course_code }}</td>
+                        <td>{{ entry.name }}</td>
+                        <td>{{ entry.date|datetimeformat }}</td>
+                        <td>{{ entry.time }}</td>
+                        <td>{{ entry.complete }}</td>
+
+                    </tr>
+
+                    {% else %}
+                    <tr><td><em>Unbelievable.  No entries here so far</em></td></tr>
+                    {% endfor %}
+                     </tbody>
+
+
+
+                 </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

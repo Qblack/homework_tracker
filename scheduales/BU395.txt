@@ -1,0 +1,28 @@
+1|May 06|Introduction|Course outline
+2|May 08|Supply Chain Management I|Chapter 11
+3|May 13|Supply Chain Management II|Chapter 11
+Case: Amazon.com@P403
+4|May 15|Supply Chain Win-Win Contracts|Posted materials on MyLS
+5|May 22|Supply Chain Win-Win Contracts|Posted materials on MyLS
+|T May 20|NO LECTURE; But students of TR Sections are encouraged to play one or more online games related to this course. One example website is: http://bl-bus-jacobsvm.ads.iu.edu/egames.html
+6|May 27|Inventory Management I|Chapter 12
+7|May 29|Inventory Management II|Chapter 12
+8|June 03|Inventory Management III|Chapter 12
+9|June 05|Midterm1 Review|
+Midterm 1, Saturday June 07, 2:00-3:30pm; Cover Lectures 1-8
+10|June 10|Aggregate Operations Planning I|Chapter 13
+11|June 12|Aggregate Operations Planning II|Chapter 13
+12|June 17|Aggregate Operations Planning III|Chapter 13
+Cases@P503
+13|June 19|Material Requirements Planning I|Chapter 14
+14|June 24|Material Requirements Planning II|Chapter 14
+Case: DMD enterprises@P543
+15|June 26|Just-In-Time & Lean Systems I|Chapter 15
+16|July 03|Just-In-Time & Lean Systems II|Chapter 15
+|M June 30|NO LECTURE; But students of MW Sections are encouraged to play one or more online games related to this course. One example website is: http://bl-bus-jacobsvm.ads.iu.edu/egames.html
+17|July 08|Scheduling I|Chapter 16
+18|July 10|Midterm 2 Review|
+Midterm 2, Saturday July 12, 2:00-3:30pm; Covers Lectures 10-16
+19|July 15|Scheduling II|Chapter 16
+20|July 17|Scheduling III|Chapter 16
+
