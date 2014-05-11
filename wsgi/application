@@ -13,6 +13,9 @@ PY_CACHE = os.path.join(virtenv, 'lib', os.environ['OPENSHIFT_PYTHON_VERSION'], 
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(PY_CACHE)
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 
+import sys, logging
+logging.basicConfig(stream = sys.stderr)
+
 try:
     exec(open(virtualenv).read(), dict(__file__=virtualenv))
 except IOError:
