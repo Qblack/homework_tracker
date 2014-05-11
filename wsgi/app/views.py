@@ -33,7 +33,6 @@ TYPES = ['Readings', 'Assignments', 'Tests']
 
 @app.route('/',methods=['POST','GET'])
 def show_all():
-    return "hello world"
     db = get_db()
     if request.method=='POST':
         update_completes(db)
