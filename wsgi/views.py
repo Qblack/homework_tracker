@@ -17,9 +17,7 @@ from data.homework_manipulations import *
 
 
 # configuration
-DATABASE = os.path.join(app.root_path,'\data', 'summer2014courses.db')
-print(DATABASE)
-
+DATABASE = os.path.join(os.environ.get('HOME'), 'homework_tracker/data/summer2014courses.db')
 DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
@@ -27,15 +25,15 @@ PASSWORD = 'default'
 
 def format_datetime(value,format='%b-%d'):
     list_date = value.split('-')
-
     strdate = date(int(list_date[0]),int(list_date[1]),int(list_date[2]))
     return strdate.strftime(format)
 
 environment.DEFAULT_FILTERS['datetimeformat']=format_datetime
 
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
 
 def init_db():
     import data.LoadDatabase
@@ -45,6 +43,7 @@ def get_db():
     """Opens a new database connection if there is none yet for the
     current application context.
     """
+    print("hello")
     top = _app_ctx_stack.top
     if not hasattr(top, 'sqlite_db'):
         sqlite_db = sqlite3.connect(app.config['DATABASE'])
@@ -58,7 +57,6 @@ TYPES = ['Readings', 'Assignments', 'Tests']
 
 @app.route('/',methods=['POST','GET'])
 def show_all():
-
     db = get_db()
     if request.method=='POST':
         update_completes(db,request)
