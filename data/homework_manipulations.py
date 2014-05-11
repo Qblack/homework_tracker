@@ -1,4 +1,5 @@
 __author__ = 'Q'
+
 def select_homework(homework_type,db):
     sql = ''' SELECT rowid,* FROM {0} ORDER BY date'''.format(homework_type)
     cur = db.execute(sql)
@@ -28,7 +29,19 @@ def join_homework(homework):
         i+=1
     return entries
 
-def update_completes(db):
+
+
+def update_table(db,table,completed,rowid):
+    sql = '''UPDATE {0}
+            SET complete='{1}'
+            WHERE rowid = {2}
+            '''.format(table,completed,rowid)
+    db.execute(sql)
+    db.commit()
+    return
+
+
+def update_completes(db,request):
     f = request.form
     for key in f.keys():
         for value in f.getlist(key):
@@ -38,13 +51,4 @@ def update_completes(db):
             complete = int(value)
             complete^=1
             update_table(db,table,complete,rowid)
-    return
-
-def update_table(db,table,completed,rowid):
-    sql = '''UPDATE {0}
-            SET complete='{1}'
-            WHERE rowid = {2}
-            '''.format(table,completed,rowid)
-    db.execute(sql)
-    db.commit()
     return

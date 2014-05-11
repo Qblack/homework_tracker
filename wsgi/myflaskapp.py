@@ -1,18 +1,25 @@
 from sqlite3 import dbapi2 as sqlite3
-from flask import Flask, request, render_template, _app_ctx_stack
 import os
-from jinja2 import environment
 from datetime import date
-from data.homework_manipulations import *
+
+from flask import Flask, request, render_template, _app_ctx_stack
+from jinja2 import environment
 
 
-
+import sys
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from data.homework_manipulations import *
+
+
+
 # configuration
-DATABASE = os.path.join(app.root_path,'/data', 'summer2014courses.db')
+DATABASE = os.path.join(app.root_path,'\data', 'summer2014courses.db')
+print(DATABASE)
+
 DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
@@ -28,7 +35,7 @@ environment.DEFAULT_FILTERS['datetimeformat']=format_datetime
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 def init_db():
     import data.LoadDatabase
@@ -47,12 +54,14 @@ def get_db():
 
     return top.sqlite_db
 
+TYPES = ['Readings', 'Assignments', 'Tests']
 
 @app.route('/',methods=['POST','GET'])
 def show_all():
+
     db = get_db()
     if request.method=='POST':
-        update_completes(db)
+        update_completes(db,request)
 
     entries =[]
     for homework in TYPES:
