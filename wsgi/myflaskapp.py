@@ -12,8 +12,11 @@ app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 # configuration
-DATABASE = os.path.join(app.root_path, 'summer2014courses.db')
-DEBUG = False
+DATABASE = os.path.join(app.root_path,'/data', 'summer2014courses.db')
+DEBUG = True
+SECRET_KEY = 'development key'
+USERNAME = 'admin'
+PASSWORD = 'default'
 
 def format_datetime(value,format='%b-%d'):
     list_date = value.split('-')
