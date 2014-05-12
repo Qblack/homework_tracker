@@ -2,6 +2,7 @@ from sqlite3 import dbapi2 as sqlite3
 from datetime import date
 from flask import request, render_template, _app_ctx_stack
 from jinja2 import environment
+import os
 from app import app
 
 
@@ -23,7 +24,7 @@ def get_db():
     """
     top = _app_ctx_stack.top
     if not hasattr(top, 'sqlite_db'):
-        sqlite_db = sqlite3.connect(app.config['DATABASE'])
+        sqlite_db = sqlite3.connect( app.config['DATABASE'])
         sqlite_db.row_factory = sqlite3.Row
         top.sqlite_db = sqlite_db
 
