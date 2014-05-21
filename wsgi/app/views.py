@@ -2,8 +2,8 @@ from sqlite3 import dbapi2 as sqlite3
 from datetime import date
 from flask import request, render_template, _app_ctx_stack
 from jinja2 import environment
-import os
 from app import app
+
 
 
 
@@ -15,8 +15,8 @@ def format_datetime(value,format='%b-%d'):
 environment.DEFAULT_FILTERS['datetimeformat']=format_datetime
 
 def init_db():
-    import data.LoadDatabase
-    data.LoadDatabase.load_database()
+    import wsgi.app.database.LoadDatabase
+    wsgi.app.database.LoadDatabase.load_database()
 
 def get_db():
     """Opens a new database connection if there is none yet for the

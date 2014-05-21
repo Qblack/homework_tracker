@@ -1,13 +1,13 @@
 __author__ = 'Q'
 
 
-from data.Database import DataBase
-from data.ReadCourseInfo import *
-import data.SetUpDataBase
+from wsgi.app.database.Database import DataBase
+from wsgi.app.database.ReadCourseInfo import *
+import wsgi.app.database.SetUpDataBase
 
 
 def load_database():
-    data.SetUpDataBase.reset_database()
+    wsgi.app.database.SetUpDataBase.reset_database()
 
     db = DataBase("summer2014courses.db")
 

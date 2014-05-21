@@ -8,3 +8,4 @@ setup(name='HomeWorkTracker',
       url='http://www.python.org/sigs/distutils-sig/',
       install_requires=['Flask>=0.7.2', 'MarkupSafe','sqlite3']
      )
+

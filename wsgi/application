@@ -16,10 +16,27 @@ virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 import sys, logging
 logging.basicConfig(stream = sys.stderr)
 
+app.config.update(dict(
+    DATABASE=os.path.join(app.root_path, 'flaskr.db'),
+    DEBUG=True,
+    SECRET_KEY='development key',
+    USERNAME='admin',
+    PASSWORD='default'
+))
+
+
 try:
     exec(open(virtualenv).read(), dict(__file__=virtualenv))
 except IOError:
     pass
 
 from run import app as application
+
+application.config.update(dict(
+    DATABASE=os.path.join(application.root_path, 'summer2014courses.db'),
+    DEBUG=True,
+    SECRET_KEY='development key',
+    USERNAME='admin',
+    PASSWORD='default'
+))
 

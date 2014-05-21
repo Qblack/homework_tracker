@@ -1,6 +1,7 @@
+from wsgi.app.database import Course
+
 __author__ = 'Q'
 
-from data.Course import Course
 import re
 
 TIME_PATTERN = r"(\d|\s)\d\:\d\d"
