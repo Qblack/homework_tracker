@@ -14,10 +14,7 @@ def format_datetime(value,format='%b-%d'):
 
 environment.DEFAULT_FILTERS['datetimeformat']=format_datetime
 
-def init_db():
-    print("Hello World")
-    import wsgi.app.database.LoadDatabase
-    wsgi.app.database.LoadDatabase.load_database()
+
 
 def get_db():
     """Opens a new database connection if there is none yet for the

@@ -1,6 +1,4 @@
 __author__ = 'Q'
-
-
 from wsgi.app.database.Database import DataBase
 from wsgi.app.database.ReadCourseInfo import *
 import wsgi.app.database.SetUpDataBase
@@ -10,8 +8,6 @@ def load_database():
     wsgi.app.database.SetUpDataBase.reset_database()
 
     db = DataBase("summer2014courses.db")
-
-
     fh = open("schedules/bu362.txt","r+",encoding="utf-8")
     convert_schedule_to_course(fh,"BU362","Building and Managing A Brand", db)
     fh.close()
